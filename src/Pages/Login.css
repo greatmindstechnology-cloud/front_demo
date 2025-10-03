@@ -1,0 +1,290 @@
+.Login_parent {
+  background: linear-gradient(to right, #07377e, #13479b, #0545a5);
+  overflow: hidden;
+}
+
+.login_grandparent {
+  width: 70%;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.Login_leftSide {
+  position: relative;
+  width: 50% !important;
+}
+
+.bg-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+  background-color: #000;
+  border-radius: 2dvh;
+}
+
+.auth-one-bg {
+  background-image: url(../assets/first_img.png);
+  background-position: center;
+  background-size: top;
+  height: 100vh;
+}
+
+.auth-one-bg .bg-overlay {
+  background: linear-gradient(to right, #042c91, #022298);
+  opacity: 0.9;
+}
+
+.Login_left_icon {
+  width: 120px;
+  position: absolute;
+  opacity: 0.8;
+  left: 37px;
+  top: 25px;
+}
+
+.Login_Right_Icon {
+  text-align: center;
+}
+
+.Login_Right_Icon img {
+  width: 100%;
+}
+/* Box to Hold Left and Right Sections */
+.login-box {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  height: 600px;
+  background: white;
+  border-radius: 15px;
+  /* padding: 20px; */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Section - Image */
+.login-left {
+  width: 50%;
+  height: 100%;
+  border-radius: 100px;
+}
+
+.login-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Section - Login Form */
+.login-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  background: white;
+}
+
+.login-logo img {
+  width: 75%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.login-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  /* color: gray; */
+  color: #0033a8;
+  margin: 0 0 20px 0px;
+}
+
+.form-style {
+  width: 70%;
+}
+
+/* Email Input Field */
+.login-input {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.login-input label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.login-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Error Styles */
+.error-input {
+  border: 2px solid rgb(255, 0, 0) !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Login Button */
+.login-button-div {
+  width: 100%;
+}
+
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: #2d5eff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.login-button:hover {
+  background: #1c3cc9;
+}
+
+/* Loading Screen */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: white;
+}
+
+.forgot-password {
+  margin-top: 10px;
+}
+
+/* System Compatibility Check */
+.signup {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #2d5eff;
+  cursor: pointer;
+}
+
+.signup:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .login-box {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .login-left,
+  .login-right {
+    width: 100%;
+    height: 300px;
+  }
+
+  .login-right {
+    padding: 20px;
+  }
+
+  .Login_Right_Icon {
+    width: 100%;
+    height: auto;
+  }
+
+  .login-logo img {
+    width: 60%;
+  }
+
+  .form-style {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-left {
+    display: none; /* Hide left image on smaller screens */
+  }
+
+  .login-right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .login-box {
+    height: auto;
+    width: 95%;
+  }
+
+  .form-style {
+    width: 100%;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .login-subtitle {
+    font-size: 13px;
+  }
+
+  .login-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 18px;
+  }
+
+  .login-subtitle {
+    font-size: 12px;
+  }
+
+  .login-button {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .login-logo img {
+    width: 80%;
+  }
+
+  .login-input label {
+    font-size: 13px;
+  }
+
+  .login-input input {
+    font-size: 14px;
+  }
+}
+

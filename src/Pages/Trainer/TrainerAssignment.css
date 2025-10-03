@@ -1,0 +1,45 @@
+.trainer-assignment-container {
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background for contrast */
+}
+
+.trainer-assignment-container .MuiCard-root {
+  transition: all 0.3s ease;
+}
+
+.trainer-assignment-container .MuiCard-root:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.trainer-assignment-container .MuiCardHeader-root {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.trainer-assignment-container .MuiTextField-root {
+  margin-bottom: 20px !important;
+}
+
+.trainer-assignment-container .MuiButton-root {
+  min-width: 120px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.trainer-assignment-container .MuiButton-containedPrimary {
+  background-color: #1976d2;
+}
+
+.trainer-assignment-container .MuiButton-containedPrimary:hover {
+  background-color: #1565c0;
+}
+
+.trainer-assignment-container .MuiButton-outlinedSecondary {
+  border-color: #dc004e;
+  color: #dc004e;
+}
+
+.trainer-assignment-container .MuiButton-outlinedSecondary:hover {
+  border-color: #b00036;
+  color: #b00036;
+  background-color: rgba(220, 0, 78, 0.1);
+}

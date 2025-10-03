@@ -1,0 +1,119 @@
+/* Existing Styles */
+.EditStudentDetails {
+  height: 150px;
+}
+
+.css-k7mt0g {
+  margin: 0;
+}
+
+.Edit_Form_Parent {
+  background-color: lightgrey;
+}
+
+.Edit_form_parent {
+  background-color: white;
+}
+
+.Editpageimage {
+  background-image: url(../assets/educational_banner2.jpg);
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  position: relative;
+}
+
+.Edit_profile_photo_header {
+  text-align: center;
+}
+
+.Edit_profile_photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.Edit_Field_row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Edit_page_card {
+  width: 80%;
+  margin: 0 auto;
+  position: absolute;
+  top: 200px;
+  left: 130px;
+  z-index: 999;
+}
+
+/* New Styles for Profile Icon and Menu */
+.profile-icon-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.profile-icon-container .MuiIconButton-root {
+  padding: 8px;
+}
+
+.profile-icon-container .MuiAvatar-root {
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.MuiMenu-paper {
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+}
+
+.MuiMenuItem-root {
+  font-size: 14px;
+  padding: 8px 16px;
+  color: #333;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: #f5f5f5;
+}
+
+.MuiInputLabel-root {
+  transform-origin: top left;
+  transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+
+.MuiInputLabel-shrink {
+  transform: translate(0, -1.5px) scale(0.75);
+}
+
+.profile-icon-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.EditStudentDetails {
+  position: relative;
+  width: 100%;
+}
+
+/* Ensure form fields have proper spacing */
+.MuiGrid-item {
+  padding: 8px;
+}
+
+/* Ensure buttons are styled consistently */
+.MuiButton-root {
+  text-transform: none;
+}
+
+/* Fix for Autocomplete to prevent label overlap */
+.MuiAutocomplete-root .MuiInputLabel-root {
+  top: 0;
+}

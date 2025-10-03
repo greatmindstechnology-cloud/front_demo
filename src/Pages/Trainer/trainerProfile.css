@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-header {
+  background-image: url(../../assets/studentpagejpg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 20px;
+  color: white;
+}
+
+.profile_subheader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.profile_photo_header {
+  flex: 1 1;
+  display: flex;
+  justify-content: center;
+  margin-left: -1cm;
+}
+
+.profile_photo {
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.profile_right_side {
+  flex: 2 1 200px;
+  padding: 20px 0;
+}
+
+.profile_right_side h2,
+.profile_right_side small,
+.profile_right_side p {
+  margin-bottom: 8px;
+  display: block;
+}
+
+
+
+
+.profile_button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Card with profile status */
+.card-header {
+  width: 85%;
+  position: absolute;
+  top: 265px;
+  left: 80px;
+  z-index: 900;
+}
+
+.student-details {
+  background-color: lightgray;
+  padding: 100px 20px 40px 20px;
+}
+
+/* Student info card */
+.student_details_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.list_left,
+.list_right {
+  flex: 1 1 250px;
+}
+
+.list_left h6 {
+  margin-bottom: 21px;
+}
+
+.list_right p {
+  margin-bottom: 21px;
+}
+
+.list_right p strong {
+  margin-right: 20px;
+}
+
+/* Skills section */
+.skill_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill_list small {
+  padding: 5px 10px;
+  background-color: lightskyblue;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+  .card-header {
+    width: 90%;
+    left: 5%;
+    position: static;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile_subheader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile_right_side {
+    padding: 10px 0;
+  }
+
+  .profile_button {
+    position: static;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .student-details {
+    padding: 60px 10px 30px 10px;
+  }
+
+  .list_left,
+  .list_right {
+    width: 100%;
+  }
+
+  .card-header {
+    position: static;
+    width: 95%;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile_photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .skill_list small {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}

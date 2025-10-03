@@ -1,0 +1,38 @@
+.workshop-internship-container {
+  padding: 20px;
+  background-color: #f5f7fa;
+}
+
+.workshop-internship-container .MuiCard-root {
+  transition: all 0.3s ease;
+}
+
+.workshop-internship-container .MuiCard-root:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.workshop-internship-container .MuiButton-containedPrimary {
+  background-color: #1976d2;
+}
+
+.workshop-internship-container .MuiButton-containedPrimary:hover {
+  background-color: #1565c0;
+}
+
+.workshop-internship-container .MuiButton-containedSecondary {
+  background-color: #dc004e;
+}
+
+.workshop-internship-container .MuiButton-containedSecondary:hover {
+  background-color: #b00036;
+}
+
+.workshop-internship-container .MuiToggleButtonGroup-root .MuiToggleButton-root {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.workshop-internship-container .MuiToggleButtonGroup-root .Mui-selected {
+  background-color: #1976d2;
+  color: #fff;
+}

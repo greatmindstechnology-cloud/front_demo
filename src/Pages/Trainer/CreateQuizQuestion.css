@@ -1,0 +1,50 @@
+
+/* Container */
+.create-quiz-question-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: calc(100vh - 64px);
+}
+
+/* Title */
+.create-quiz-question-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Form Card */
+.form-card {
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form Grid */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Question Section */
+.question-section {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.btn-cancel,
+.btn-submit {
+  min-width: 120px;
+}
