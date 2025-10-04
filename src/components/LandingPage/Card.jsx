@@ -1,7 +1,6 @@
 
 import StarRating from "./StarRating";
 import React from "react";
-import { AdvancedImage } from "@cloudinary/react";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
