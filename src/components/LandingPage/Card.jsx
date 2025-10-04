@@ -1,9 +1,7 @@
 
 import StarRating from "./StarRating";
 import React from "react";
-import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "@cloudinary/react";
-import { fill } from "@cloudinary/url-gen/actions/resize";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
