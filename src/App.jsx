@@ -13,7 +13,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import StudentEditForm from "./Pages/studentEditForm";
 import UserProfileStart from "./Pages/Userprofilestart";
 import TrainerEditProfile from "./Pages/Trainer/trainerEditProfile";
-import TrainerProfile from "./Pages/Trainer/TrainerProfile";
+import TrainerProfile from "./Pages/Trainer/TrainerProfile.jsx";
 import GMTSideBar from "./Pages/sidebar2";
 import VendorProfile from "./Pages/Vendor/vendorProfile";
 import VendorEditProfile from "./Pages/Vendor/verndorEditProfile";
