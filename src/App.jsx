@@ -29,7 +29,7 @@ import CreateCourse from "./Pages/Trainer/trainerCourseCreate";
 import CourseList from "./Pages/Courses/CourseList";
 import CourseDetail from "./Pages/Courses/CourseDetail";
 import CourseVideoPage from "./Pages/CourseVideo/CourseVideoPage";
-import BatchSchedulingPage from "./pages/BatchScheduling/BatchSchedulingPage";
+import BatchSchedulingPage from "./Pages/BatchScheduling/BatchSchedulingPage";
 import LandingPageConst from "./Pages/Landing Page/LandingPageConst";
 import CourseEnrollments from "./Pages/Enrollments/CourseEnrollments";
 import EnhancedTable from "./Pages/Enrollments/Enrollment_Students";
