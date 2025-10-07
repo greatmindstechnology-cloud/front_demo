@@ -1,0 +1,54 @@
+/* createSelection.css */
+.create-selection-container {
+  padding: 20px;
+  background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png'), #e6f0fa;
+  background-size: auto;
+  background-repeat: repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-selection-container h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.selection-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.selection-button {
+  background: #e6f0fa;
+  border: 1px solid #d3e0ea;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.selection-button:hover {
+  background: #d3e0ea;
+}
+
+.cancel-button {
+  background: #e6f0fa;
+  border: 1px solid #d3e0ea;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancel-button:hover {
+  background: #d3e0ea;
+}

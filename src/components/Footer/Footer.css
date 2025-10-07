@@ -1,0 +1,120 @@
+.footer_main {
+  background-color: #111827;
+  color: white;
+  padding: 3rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  flex: 1 1 300px;
+  max-width: 350px;
+}
+
+.footer-logo-img {
+  width: 140px;
+  margin-bottom: 1rem;
+}
+
+.footer-logo h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-links {
+  flex: 1 1 200px;
+}
+
+.footer-links h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  color: #9ca3af;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+.footer-links li:hover {
+  text-decoration: underline;
+}
+
+.footer-subscribe {
+  flex: 1 1 300px;
+}
+
+.footer-subscribe h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-subscribe p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.subscribe-input {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.subscribe-input input {
+  flex: 1 1 200px;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #1f2937;
+  color: white;
+}
+
+.subscribe-input input::placeholder {
+  color: #6b7280;
+}
+
+.subscribe-input button {
+  padding: 0.6rem 1.2rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-input button:hover {
+  background-color: #2563eb;
+}
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  text-align: center;
+  border-top: 1px solid #334155;
+  padding-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}

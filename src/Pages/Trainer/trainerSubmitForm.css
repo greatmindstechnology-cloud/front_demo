@@ -1,0 +1,71 @@
+/* Full Page Container */
+.trainerParent {
+  background: linear-gradient(to right, rgb(170, 198, 230), lch(40.84% 47.21 283.07), rgb(49, 94, 165));
+}
+
+.TrainerDetails_parent {
+  background: linear-gradient(to right, #d0e6ff, #6ba4ff, #003e7e);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.auth-page-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 5rem;
+}
+
+.TrainerDetails_header {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+
+.trainerRightside{
+  background-color: white;
+
+}
+/* Form Sections */
+.MuiTextField-root,
+.MuiFormControl-root {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+  display: block;
+}
+
+.file-input {
+  padding: 8px 0;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Grid Layout for Documents Upload */
+.MuiGrid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Red Star for Mandatory Fields */
+.required-star {
+  color: red;
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+  width: 100%;
+  flex-shrink: 0;
+}

@@ -1,0 +1,86 @@
+.trainerEdit_Form_Parent {
+  background-color: lightgrey;
+}
+
+.Edit_form_parent {
+  background-color: white;
+}
+
+.trainerEditpageimage {
+  background-image: url(../../assets/trainer_profile4.jpg);
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.Edit_profile_photo_header {
+  text-align: center;
+}
+
+.Edit_profile_photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.Edit_Field_row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Edit_page_card {
+  width: 80%;
+  margin: 0 auto;
+  position: absolute;
+  top: 200px;
+  left: 130px;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .trainerEditpageimage {
+    height: 250px;
+  }
+  .Edit_page_card {
+    width: 90%;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .Edit_profile_photo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .trainerEditpageimage {
+    height: 200px;
+  }
+  .Edit_page_card {
+    width: 95%;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+  }
+  .Edit_profile_photo {
+    width: 80px;
+    height: 80px;
+    border-width: 3px;
+  }
+  .Edit_Field_row {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+  }
+}

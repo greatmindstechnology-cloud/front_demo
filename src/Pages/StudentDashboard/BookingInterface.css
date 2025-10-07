@@ -1,0 +1,31 @@
+.booking-interface-container {
+  padding: 20px;
+  background-color: #f5f7fa;
+}
+
+.booking-interface-container .MuiBox-root {
+  transition: all 0.3s ease;
+}
+
+.booking-interface-container .MuiBox-root:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-interface-container .MuiButton-containedPrimary {
+  background-color: #1976d2;
+}
+
+.booking-interface-container .MuiButton-containedPrimary:hover {
+  background-color: #1565c0;
+}
+
+.booking-interface-container .MuiButton-outlinedSecondary {
+  border-color: #dc004e;
+  color: #dc004e;
+}
+
+.booking-interface-container .MuiButton-outlinedSecondary:hover {
+  border-color: #b00036;
+  color: #b00036;
+  background-color: rgba(220, 0, 78, 0.1);
+}

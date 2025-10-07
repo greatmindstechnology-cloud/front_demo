@@ -1,0 +1,62 @@
+/* styles/certificate.css */
+.certificate-wrapper {
+    width: 1086px;
+    height: 768px;
+    position: relative;
+    margin: auto;
+    background-image: url("../../assets/BlankTemplate.png");
+    background-size: cover;
+    background-position: center;
+    font-family: "Georgia", serif;
+  }
+  
+  .text-field {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #1a1a40;
+  }
+  
+  .awarded-to {
+    top: 320px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .description {
+    top: 380px;
+    width: 80%;
+    left: 10%;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .date {
+    bottom: 110px;
+    left: 180px;
+    width: auto;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+  }
+  
+  .trainer {
+    bottom: 110px;
+    right: 180px;
+    width: auto;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+  }
+  
+  .download-button {
+    margin-top: 20px;
+    background-color: #0c4a8c;
+    color: white;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  

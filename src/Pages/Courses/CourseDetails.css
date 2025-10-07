@@ -1,0 +1,407 @@
+/* .course-details {
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  background: #f5faff;
+}
+
+.main-container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+ 
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.left-panel {
+  flex: 3;
+  min-width: 60%;
+}
+
+.right-card {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: sticky;
+  top: 20px;
+}
+
+.course-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.course-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.stars {
+  color: #f39c12;
+}
+
+.instructor {
+  color: #007bff;
+}
+
+.course-structure {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.course-structure h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.structure-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.section-block {
+  margin: 1rem 0;
+}
+
+.section-block h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  justify-content: space-between;
+ align-items: center;
+}
+
+.section-icon {
+  margin-right: 0.5rem;
+}
+
+.lecture-count {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.lecture-list {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.lecture-list li {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.lecture-icon {
+  margin-right: 0.5rem;
+}
+
+.description {
+  margin-top: 2rem;
+}
+
+.description h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.description p {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: #444;
+}
+
+.preview-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.offer {
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-tag {
+  margin: 1rem 0;
+}
+
+.discount-price {
+  font-size: 2rem;
+  color: #2ecc71;
+  font-weight: 700;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 0.6rem;
+  font-size: 1.2rem;
+}
+
+.offer-tag {
+  display: block;
+  color: #e67e22;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.course-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.meta-icon {
+  margin: 0 0.2rem;
+}
+
+.enroll-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.enroll-btn:hover {
+  background-color: #2563eb;
+}
+
+.features {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.features h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.features p {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.4rem 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .right-card {
+    position: static;
+    width: 100%;
+  }
+} */
+ .course-details {
+  font-family: "Segoe UI", sans-serif;
+  color: #1e1e1e;
+  background: #f9fcfd;
+}
+
+.header {
+  background: linear-gradient(to right, #e0f2f1, #e0f7fa);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0d47a1;
+}
+.tagline {
+  font-size: 1rem;
+  color: #333;
+}
+
+.main-container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.left-panel {
+  flex: 3;
+  min-width: 60%;
+}
+.right-card {
+  flex: 1;
+  min-width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.course-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.course-subtitle {
+  margin: 0.5rem 0 1rem;
+  color: #555;
+}
+.rating {
+  font-size: 0.95rem;
+}
+.instructor {
+  color: #007bff;
+}
+
+.course-structure {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+}
+.module h3 {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+.module ul {
+  margin-left: 1.2rem;
+}
+.module ul li {
+  margin: 0.4rem 0;
+}
+.simple-modules p {
+  margin: 0.4rem 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.description {
+  margin-top: 2rem;
+}
+.description p {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.preview-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.offer {
+  color: #e74c3c;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.price-tag {
+  margin: 1rem 0;
+}
+.discount-price {
+  font-size: 1.8rem;
+  color: #2ecc71;
+  font-weight: bold;
+}
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 0.6rem;
+}
+.offer-tag {
+  display: block;
+  color: #e67e22;
+}
+
+.enroll-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.enroll-btn:hover {
+  background-color: #2563eb;
+}
+
+.features {
+  text-align: left;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.right-card,
+.enroll-btn {
+  transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+.module h3::before {
+  content: "📘";
+  margin-right: 0.5rem;
+}
+.features p {
+  margin: 0.4rem 0;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .right-card {
+    position: static;
+    width: 100%;
+  }
+}
+.features p::before {
+  content: "✔️";
+  margin-right: 0.5rem;
+}
