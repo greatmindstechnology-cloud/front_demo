@@ -36,7 +36,7 @@ const schema = yup.object({
   password: yup.string().required("Password is required"),
 });
 
-const RECAPTCHA_SITE_KEY = "6LeaUOErAAAAAOzbPDX3f2MDTf0dR80yJcIwHO0m";
+const RECAPTCHA_SITE_KEY = "6LeleCErAAAAAIKPm-gCLCoip16yAw3TiWfnccU1";
 
 const Login = () => {
   const navigate = useNavigate();
