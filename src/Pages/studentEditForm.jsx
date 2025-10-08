@@ -124,7 +124,7 @@ export default function BasicTabs() {
   const state = personalForm.watch("state");
 
   const inputRef = useRef();
-  const BASE_URL = "http://localhost:8000";
+  const BASE_URL = "https://backend-demo-esqk.onrender.com";
 
   const locationData = {
     India: {
