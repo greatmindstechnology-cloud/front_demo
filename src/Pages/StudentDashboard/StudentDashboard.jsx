@@ -65,11 +65,11 @@ const StudentDashboard = () => {
       setUserData({ name: 'Guest', email: 'N/A', skills: [] });
     }
     const trainerId = localStorage.getItem('userEmail');
-    const BASE_URL = 'http://localhost:8000';
+    const BASE_URL = 'https://backend-demo-esqk.onrender.com';
 
     // Fetch user data by sending the email as a query parameter
     const fetchUserData = trainerId
-      ? fetch(`http://localhost:8000/admin_gmt/student/?email=${trainerId}`, {
+      ? fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/student/?email=${trainerId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
