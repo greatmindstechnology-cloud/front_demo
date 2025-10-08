@@ -38,7 +38,7 @@ const CourseList = () => {
 
   useEffect(() => {
     const DEFAULT_IMAGE = "https://via.placeholder.com/250?text=No+Image";
-    const BASE_URL = "https://backend-demo-esqk.onrender.com/";
+    const BASE_URL = "https://backend-demo-esqk.onrender.com";
     const validImageExtensions = [".jpg", ".jpeg", ".png", ".gif", ".webp"];
 
     const fetchCourses = async () => {
