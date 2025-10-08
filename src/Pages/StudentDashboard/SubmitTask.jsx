@@ -81,7 +81,7 @@ const SubmitTask = () => {
     if (comments.trim()) formData.append('comments', comments);
 
     try {
-      const response = await fetch('http://localhost:8000/course_gmt/api/task-submit/', {
+      const response = await fetch('https://backend-demo-esqk.onrender.com/course_gmt/api/task-submit/', {
         method: 'POST',
         body: formData,
       });

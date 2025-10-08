@@ -37,7 +37,7 @@ const BookingInterface = () => {
     const fetchListing = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:8000/vendor_gmt/api/internship/${id}/`);
+        const response = await fetch(`https://backend-demo-esqk.onrender.com/vendor_gmt/api/internship/${id}/`);
         if (!response.ok) throw new Error('Failed to fetch listing');
         const data = await response.json();
         console.log('Fetched Listing Data:', data);
@@ -69,7 +69,7 @@ const BookingInterface = () => {
     console.log('Checking cancellation eligibility, listing:', listing);
     const checkCancellation = async () => {
       if (listing?.booking_id) {
-        const response = await fetch(`http://localhost:8000/student_gmt/booking/${listing.booking_id}/cancellation_eligible`);
+        const response = await fetch(`https://backend-demo-esqk.onrender.com/student_gmt/booking/${listing.booking_id}/cancellation_eligible`);
         if (!response.ok) {
           console.error('Failed to check cancellation eligibility:', response.statusText);
           return;
@@ -98,14 +98,14 @@ const BookingInterface = () => {
     console.log('Form Data to Send:', formDataToSend);
 
     try {
-      const response = await fetch('http://localhost:8000/student_gmt/api/student-booking/', {
+      const response = await fetch('https://backend-demo-esqk.onrender.com/student_gmt/api/student-booking/', {
         method: 'POST',
         body: formDataToSend,
       });
       if (!response.ok) throw new Error('Booking and upload failed');
       const data = await response.json();
       console.log('Booking and Upload Response:', data);
-      await fetch('http://localhost:8000/student_gmt/send_booking_email/', {
+      await fetch('https://backend-demo-esqk.onrender.com/student_gmt/send_booking_email/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ booking_id: data.id, email, title: listing.title, dates: listing.dates, mode: listing.mode }),
@@ -132,7 +132,7 @@ const BookingInterface = () => {
     try {
       // Use axios for the DELETE request
       const response = await axios.delete(
-        `http://localhost:8000/student_gmt/api/student-booking/delete-by-student/${studentId}/`,
+        `https://backend-demo-esqk.onrender.com/student_gmt/api/student-booking/delete-by-student/${studentId}/`,
         {
           // Add withCredentials if your backend uses cookies for auth
           // withCredentials: true,

@@ -26,7 +26,7 @@ function UserProfileStart() {
       }
 
       try {
-        const res = await axios.post("http://localhost:8000/user-profile/",
+        const res = await axios.post("https://backend-demo-esqk.onrender.com/user-profile/",
           new URLSearchParams({ email }),
           {
             headers: {

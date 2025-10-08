@@ -63,7 +63,7 @@ const CreateTask = () => {
     if (file) formData.append('task_pdf', file); // Matches task_pdf field
 
     try {
-      const response = await fetch('http://localhost:8000/course_gmt/api/tasks/', { // Updated endpoint
+      const response = await fetch('https://backend-demo-esqk.onrender.com/course_gmt/api/tasks/', { // Updated endpoint
         method: 'POST',
         body: formData,
       });

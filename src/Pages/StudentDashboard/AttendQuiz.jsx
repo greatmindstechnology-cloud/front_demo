@@ -67,7 +67,7 @@ const AttendQuiz = () => {
     const fetchTopics = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:8000/student_gmt/topics/`);
+        const response = await fetch(`https://backend-demo-esqk.onrender.com/student_gmt/topics/`);
         const data = await response.json();
         console.log('Fetch Topics Response:', data);
         if (!response.ok) throw new Error(data.error || 'Failed to fetch topics');
@@ -99,7 +99,7 @@ const AttendQuiz = () => {
     setSelectedTopic(topic);
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/student_gmt/quiz-questions/?topic_id=${topic.id}`);
+      const response = await fetch(`https://backend-demo-esqk.onrender.com/student_gmt/quiz-questions/?topic_id=${topic.id}`);
       const data = await response.json();
       console.log('Fetch Questions Response:', data);
       if (!response.ok) throw new Error(data.error || 'Failed to fetch questions');
@@ -181,7 +181,7 @@ const AttendQuiz = () => {
         selected_option: parseInt(answers[questionId]),
       }));
 
-      const submitResponse = await fetch(`http://localhost:8000/student_gmt/submit-answer/?student_id=${studentId}`, {
+      const submitResponse = await fetch(`https://backend-demo-esqk.onrender.com/student_gmt/submit-answer/?student_id=${studentId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(answerData),
@@ -199,7 +199,7 @@ const AttendQuiz = () => {
       console.log('Submit Answers Response:', submitData);
 
       const resultResponse = await fetch(
-        `http://localhost:8000/student_gmt/calculate-result/?student_id=${studentId}&topic_id=${selectedTopic.id}`,
+        `https://backend-demo-esqk.onrender.com/student_gmt/calculate-result/?student_id=${studentId}&topic_id=${selectedTopic.id}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

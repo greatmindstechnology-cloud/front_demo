@@ -56,7 +56,7 @@ const Login = () => {
     const token = credentialResponse.credential;
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/google-login/",
+        "https://backend-demo-esqk.onrender.com/api/google-login/",
         {
           token: token,
         }

@@ -72,7 +72,7 @@ const CreateTopic = () => {
     console.log('Request Data:', data);
 
     try {
-      const response = await fetch(`http://localhost:8000/trainer_gmt/create/topic/?trainer_id=${trainerId}`, {
+      const response = await fetch(`https://backend-demo-esqk.onrender.com/trainer_gmt/create/topic/?trainer_id=${trainerId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

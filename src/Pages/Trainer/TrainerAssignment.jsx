@@ -87,7 +87,7 @@ const TrainerAssignment = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/trainer_gmt/assignment/create/', {
+      const response = await fetch('https://backend-demo-esqk.onrender.com/trainer_gmt/assignment/create/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(assignmentData),

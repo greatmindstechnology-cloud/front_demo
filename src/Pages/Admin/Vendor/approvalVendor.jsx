@@ -98,10 +98,10 @@ export default function VendorApproval() {
   const [open, setOpen] = useState(false);
   const [openFull, setOpenFull] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
-  const BASE_URL = "http://localhost:8000";
+  const BASE_URL = "https://backend-demo-esqk.onrender.com";
 
   useEffect(() => {
-    fetch('http://localhost:8000/admin_gmt/vendors/')
+    fetch('https://backend-demo-esqk.onrender.com/admin_gmt/vendors/')
       .then((res) => res.json())
       .then((result) => {
         const data = Array.isArray(result.data) ? result.data : [];
@@ -135,7 +135,7 @@ export default function VendorApproval() {
       formData.append('id', id);
       formData.append('status', 'Approved');
 
-      const response = await fetch('http://localhost:8000/admin_gmt/update-vendor-status/', {
+      const response = await fetch('https://backend-demo-esqk.onrender.com/admin_gmt/update-vendor-status/', {
         method: 'PUT',
         body: formData,
       });
@@ -164,7 +164,7 @@ export default function VendorApproval() {
       formData.append('id', id);
       formData.append('status', 'Rejected');
 
-      const response = await fetch('http://localhost:8000/admin_gmt/update-vendor-status/', {
+      const response = await fetch('https://backend-demo-esqk.onrender.com/admin_gmt/update-vendor-status/', {
         method: 'PUT',
         body: formData,
       });
@@ -204,7 +204,7 @@ export default function VendorApproval() {
       formData.append('id', id);
       formData.append('status', newStatus);
 
-      const response = await fetch('http://localhost:8000/admin_gmt/update-vendor-status/', {
+      const response = await fetch('https://backend-demo-esqk.onrender.com/admin_gmt/update-vendor-status/', {
         method: 'PUT',
         body: formData,
       });

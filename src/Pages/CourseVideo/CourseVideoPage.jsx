@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import './CourseVideoPage.css';
 
 // Constants
-const BACKEND_BASE_URL = 'http://localhost:8000';
+const BACKEND_BASE_URL = 'https://backend-demo-esqk.onrender.com';
 const TABS = ['Overview', 'Lecture Notes', 'Attachments', 'Announcements'];
 
 // Utility function to format duration

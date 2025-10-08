@@ -12,7 +12,7 @@ const CourseCard = ({ course }) => {
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/course_gmt/course/details/?course_id=${course.id}`, {
+        const res = await fetch(`https://backend-demo-esqk.onrender.com/course_gmt/course/details/?course_id=${course.id}`, {
           method: "GET",
         });
         const data = await res.json();
@@ -32,7 +32,7 @@ const CourseCard = ({ course }) => {
     formData.append("status", newStatus);
     console.log("Updating status for course:", course.id, "to", newStatus, "Title of course:", course.title);
     try {
-      await fetch("http://localhost:8000/course_gmt/update-course-status/", {
+      await fetch("https://backend-demo-esqk.onrender.com/course_gmt/update-course-status/", {
         method: "PUT",
         body: formData
       });
@@ -59,7 +59,7 @@ const CourseCard = ({ course }) => {
   return (
     <div className="course-card">
       <img
-        src={"http://localhost:8000" + course.image}
+        src={"https://backend-demo-esqk.onrender.com" + course.image}
         alt={course.title}
         className="course-img"
         style={{ width: "250px", height: "250px", objectFit: "cover" }}

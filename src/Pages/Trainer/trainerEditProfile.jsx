@@ -90,7 +90,7 @@ export default function PersonalInformationForm() {
 
   useEffect(() => {
     if (trainerEmail) {
-      fetch(`http://localhost:8000/admin_gmt/trainer/?email=${trainerEmail}`)
+      fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/trainer/?email=${trainerEmail}`)
         .then((res) => {
           if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);

@@ -138,7 +138,7 @@ const CreateCourse = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/trainer_gmt/courses/create/?trainer_id=${trainerId}`,
+        `https://backend-demo-esqk.onrender.com/trainer_gmt/courses/create/?trainer_id=${trainerId}`,
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -225,7 +225,7 @@ const CreateCourse = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/trainer_gmt/courses/sections/?course_id=${createdCourseId}`,
+        `https://backend-demo-esqk.onrender.com/trainer_gmt/courses/sections/?course_id=${createdCourseId}`,
         data,
         { headers: { "Content-Type": "application/json" } }
       );
@@ -338,7 +338,7 @@ const CreateCourse = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/trainer_gmt/sections/lectures/?section_id=${selectedSectionId}`,
+        `https://backend-demo-esqk.onrender.com/trainer_gmt/sections/lectures/?section_id=${selectedSectionId}`,
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

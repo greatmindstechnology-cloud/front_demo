@@ -227,7 +227,7 @@ export default function VendorEditProfile() {
     },
   });
 
-  const BASE_URL = "http://localhost:8000";
+  const BASE_URL = "https://backend-demo-esqk.onrender.com";
 
   const fetchData = async () => {
     try {

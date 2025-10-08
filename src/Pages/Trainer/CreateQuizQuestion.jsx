@@ -113,7 +113,7 @@ const CreateQuizQuestion = () => {
     console.log('Request Data:', data);
 
     try {
-      const response = await fetch(`http://localhost:8000/trainer_gmt/create/quiz-question/?topic_id=${topicId}`, {
+      const response = await fetch(`https://backend-demo-esqk.onrender.com/trainer_gmt/create/quiz-question/?topic_id=${topicId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

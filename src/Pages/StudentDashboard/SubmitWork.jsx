@@ -28,7 +28,7 @@ const SubmitWork = () => {
     formData.append('comment', comment);
 
     try {
-      const response = await fetch('http://localhost:8000/student_gmt/submit_work/', {
+      const response = await fetch('https://backend-demo-esqk.onrender.com/student_gmt/submit_work/', {
         method: 'POST',
         body: formData,
       });

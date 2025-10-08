@@ -40,7 +40,7 @@ const CreateProjectTask = () => {
     formData.append('is_draft', isDraft);
 
     try {
-      const response = await fetch('http://localhost:8000/trainer_gmt/create_project_task/', {
+      const response = await fetch('https://backend-demo-esqk.onrender.com/trainer_gmt/create_project_task/', {
         method: 'POST',
         body: formData,
       });

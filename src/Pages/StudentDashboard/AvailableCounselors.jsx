@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 const AvailableCounselors = () => {
   const DOMAINS = ['Technical', 'HR', 'Management', 'Python', 'Machine Learning'];
-  const API_BASE_URL = 'http://localhost:8000';
+  const API_BASE_URL = 'https://backend-demo-esqk.onrender.com';
 
   // State management
   const [counselors, setCounselors] = useState([]);

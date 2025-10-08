@@ -15,7 +15,7 @@ const ViewSubmissions = () => {
     const fetchSubmissions = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:8000/trainer_gmt/submissions/${id}/`, {
+        const response = await fetch(`https://backend-demo-esqk.onrender.com/trainer_gmt/submissions/${id}/`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });

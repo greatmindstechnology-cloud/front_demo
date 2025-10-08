@@ -17,7 +17,7 @@ const Card = ({course}) => {
     const {linkImg,title,category,rating,price}=course;
     return (
         <div className="bg-white drop-shadow-md overflow-hidden rounded-2xl mx-1 my-4 cursor-pointer">
-           <img src={"http://localhost:8000/" + linkImg} className="h-40 w-full object-cover  " />
+           <img src={"https://backend-demo-esqk.onrender.com/" + linkImg} className="h-40 w-full object-cover  " />
            <div className="p-5 border-b">
                 <h1 className="py-2 truncate  " title={title}>{title}</h1>
                 <StarRating  rating={rating}/>

@@ -112,7 +112,7 @@ const StudentDashboard = () => {
           })
       : Promise.resolve();
 
-    const fetchCourses = fetch('http://localhost:8000/student_gmt/all-courses/', {
+    const fetchCourses = fetch('https://backend-demo-esqk.onrender.com/student_gmt/all-courses/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -141,7 +141,7 @@ const StudentDashboard = () => {
         setCourses([]);
       });
 
-    const fetchDashboardStats = fetch('http://localhost:8000/api/dashboard-stats/', {
+    const fetchDashboardStats = fetch('https://backend-demo-esqk.onrender.com/api/dashboard-stats/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

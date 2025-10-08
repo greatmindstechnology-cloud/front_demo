@@ -101,7 +101,7 @@ const SuperAdminDashboard = () => {
     setAdminError('');
     setAdminSuccess(false);
 
-    fetch('http://localhost:8000/super_admin_gmt/add/admin/', {
+    fetch('https://backend-demo-esqk.onrender.com/super_admin_gmt/add/admin/', {
       method: 'POST',
       body: formData,
     })
@@ -136,7 +136,7 @@ const SuperAdminDashboard = () => {
     setStudentLoading(true);
     setStudentError('');
     setStudentSuccess(false);
-    fetch('http://localhost:8000/super_admin_gmt/add/student/', {
+    fetch('https://backend-demo-esqk.onrender.com/super_admin_gmt/add/student/', {
       method: 'POST',
       body: formData,
     })
@@ -171,7 +171,7 @@ const SuperAdminDashboard = () => {
     setTrainerLoading(true);
     setTrainerError('');
     setTrainerSuccess(false);
-    fetch('http://localhost:8000/super_admin_gmt/add/trainer/', {
+    fetch('https://backend-demo-esqk.onrender.com/super_admin_gmt/add/trainer/', {
       method: 'POST',
       body: formData,
     })
@@ -205,7 +205,7 @@ const SuperAdminDashboard = () => {
     setVendorLoading(true);
     setVendorError('');
     setVendorSuccess(false);
-    fetch('http://localhost:8000/super_admin_gmt/add/vendor/', {
+    fetch('https://backend-demo-esqk.onrender.com/super_admin_gmt/add/vendor/', {
       method: 'POST',
       body: formData,
     })
@@ -234,7 +234,7 @@ const SuperAdminDashboard = () => {
 
   // Fetch counts
   useEffect(() => {
-    fetch('http://localhost:8000/admin_gmt/user-category-counts/')
+    fetch('https://backend-demo-esqk.onrender.com/admin_gmt/user-category-counts/')
       .then(res => res.json())
       .then(data => {
         setCounts({
@@ -248,7 +248,7 @@ const SuperAdminDashboard = () => {
 
   // Fetch admin counts
   useEffect(() => {
-    fetch('http://localhost:8000/super_admin_gmt/admin/count/')
+    fetch('https://backend-demo-esqk.onrender.com/super_admin_gmt/admin/count/')
       .then(res => res.json()) 
       .then(data => {
         setAdminCounts({
@@ -260,7 +260,7 @@ const SuperAdminDashboard = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8000/admin_gmt/trainer-status-counts/')
+    fetch('https://backend-demo-esqk.onrender.com/admin_gmt/trainer-status-counts/')
       .then(res => res.json())
       .then(data => {
         setTrainerCounts({
@@ -273,7 +273,7 @@ const SuperAdminDashboard = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8000/admin_gmt/vendor-status-counts/')
+    fetch('https://backend-demo-esqk.onrender.com/admin_gmt/vendor-status-counts/')
       .then(res => res.json())
       .then(data => {
         setVendorCounts({

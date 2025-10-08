@@ -46,7 +46,7 @@ const StudentCounselingRequests = () => {
           throw new Error('Student ID not found in localStorage');
         }
 
-        const API_BASE_URL = 'http://localhost:8000';
+        const API_BASE_URL = 'https://backend-demo-esqk.onrender.com';
         const queryParams = new URLSearchParams({ student_id: studentId });
         if (statusFilter) {
           queryParams.append('status', statusFilter);

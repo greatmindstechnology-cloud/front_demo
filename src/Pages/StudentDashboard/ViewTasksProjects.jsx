@@ -17,7 +17,7 @@ const ViewTasksProjects = () => {
     const fetchProjectsTasks = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('http://localhost:8000/student_gmt/projects_tasks/', {
+        const response = await fetch('https://backend-demo-esqk.onrender.com/student_gmt/projects_tasks/', {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });

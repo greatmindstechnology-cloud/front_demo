@@ -16,7 +16,7 @@ const StudentViewGrades = () => {
     const fetchGrades = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('http://localhost:8000/trainer_gmt/assignment-results/', {
+        const response = await fetch('https://backend-demo-esqk.onrender.com/trainer_gmt/assignment-results/', {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });

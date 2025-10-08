@@ -18,7 +18,7 @@ export default function AdminList() {
     });
 
     useEffect(() => {
-        fetch('http://localhost:8000/super_admin_gmt/admins/')
+        fetch('https://backend-demo-esqk.onrender.com/super_admin_gmt/admins/')
             .then(response => response.json())
             .then(data => {
                 if (Array.isArray(data.data)) {
@@ -41,7 +41,7 @@ export default function AdminList() {
 
     const handleView = async (row) => {
         try {
-            const response = await fetch(`http://localhost:8000/admin_gmt/admin/?id=${row.id}`);
+            const response = await fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/admin/?id=${row.id}`);
             if (response.ok) {
                 const data = await response.json();
                 const admin = data.data ? data.data : data;
@@ -57,7 +57,7 @@ export default function AdminList() {
 
     const handleEdit = async (row) => {
         try {
-            const response = await fetch(`http://localhost:8000/admin_gmt/admin/?id=${row.id}`);
+            const response = await fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/admin/?id=${row.id}`);
             if (response.ok) {
                 const data = await response.json();
                 const admin = data.data ? data.data : data;
@@ -84,7 +84,7 @@ export default function AdminList() {
                     formData.append(key, value);
                 }
             });
-            const response = await fetch(`http://localhost:8000/admin_gmt/update/admin/?email=${encodeURIComponent(editFormData.email)}`, {
+            const response = await fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/update/admin/?email=${encodeURIComponent(editFormData.email)}`, {
                 method: 'PUT',
                 body: formData,
             });
@@ -134,7 +134,7 @@ export default function AdminList() {
                             {/* Profile Picture */}
                             <img
                                 src={
-                                    `http://localhost:8000${selectedRow.profile_picture}`
+                                    `https://backend-demo-esqk.onrender.com${selectedRow.profile_picture}`
                                 }
                                 alt="Profile"
                                 style={{
@@ -180,7 +180,7 @@ export default function AdminList() {
                             {/* Profile Picture */}
                             <img
                                 src={
-                                    `http://localhost:8000${selectedRow.profile_picture}`
+                                    `https://backend-demo-esqk.onrender.com${selectedRow.profile_picture}`
                                 }
                                 alt="Profile"
                                 style={{

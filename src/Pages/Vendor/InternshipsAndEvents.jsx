@@ -50,13 +50,13 @@ const InternshipsAndEvents = () => {
       try {
        
         const internshipsResponse = await axios.get(
-          `http://localhost:8000/vendor_gmt/vendor-internships/?vendor_id=${vendorId}`
+          `https://backend-demo-esqk.onrender.com/vendor_gmt/vendor-internships/?vendor_id=${vendorId}`
         );
         const internships = internshipsResponse.data.internships || [];
 
         // Fetch events
         const eventsResponse = await axios.get(
-          `http://localhost:8000/vendor_gmt/vendor-events/?vendor_id=${vendorId}`
+          `https://backend-demo-esqk.onrender.com/vendor_gmt/vendor-events/?vendor_id=${vendorId}`
         );
         const events = eventsResponse.data.events || [];
 

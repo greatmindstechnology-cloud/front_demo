@@ -12,7 +12,7 @@ const ProjectList = () => {
   useEffect(() => {
     if (courseId) {
       axios
-        .get(`http://localhost:8000/course_gmt/get/${courseId}/projects/`)
+        .get(`https://backend-demo-esqk.onrender.com/course_gmt/get/${courseId}/projects/`)
         .then((res) => {
           setProjects(res.data);
           setLoading(false);

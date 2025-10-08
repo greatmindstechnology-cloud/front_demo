@@ -21,7 +21,7 @@ const VendorDashboard = () => {
   const [TotalEventsCount, setTotalEventsCounts] = useState(0);
   const fetchInternshData = async () => {
     try {
-      const response = await fetch('http://localhost:8000/vendor_gmt/internship/status-counts/');
+      const response = await fetch('https://backend-demo-esqk.onrender.com/vendor_gmt/internship/status-counts/');
       const jsonData = await response.json();
       console.log(jsonData);
       setTotalEventsCounts(jsonData.data.waiting+jsonData.data.approved || 0);
@@ -47,7 +47,7 @@ const VendorDashboard = () => {
         }
 
         // Make API request with the email
-        const response = await axios.get(`http://localhost:8000/admin_gmt/vendor/?email=${email}`);
+        const response = await axios.get(`https://backend-demo-esqk.onrender.com/admin_gmt/vendor/?email=${email}`);
 
         if (response.data.status === 'success') {
           const vendorData = response.data.data;
@@ -102,7 +102,7 @@ const VendorDashboard = () => {
       <div className="content">
         {/* Profile Header */}
         <div className="header">
-          <img src={"http://localhost:8000"+profileImage} alt="Profile" className="profileGo to next page to read more about this topic profile-image" />
+          <img src={"https://backend-demo-esqk.onrender.com"+profileImage} alt="Profile" className="profileGo to next page to read more about this topic profile-image" />
           <div className="name-section">
             <h2>{name}</h2>
             <p>{businessName}</p>

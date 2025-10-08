@@ -14,7 +14,7 @@ function Socialdrives() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/vendor_gmt/get_all/get_csrevent/"); 
+        const res = await axios.get("https://backend-demo-esqk.onrender.com/vendor_gmt/get_all/get_csrevent/"); 
         // replace with your real API endpoint
         setCsrItems(res.data);
         setLoading(false);

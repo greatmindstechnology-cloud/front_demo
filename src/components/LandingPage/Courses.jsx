@@ -15,7 +15,7 @@ const Courses = ({ searchTerm }) => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:8000/student_gmt/all-courses/');
+        const response = await fetch('https://backend-demo-esqk.onrender.com/student_gmt/all-courses/');
         const data = await response.json();
         console.log('Fetched courses:', data);
         if (Array.isArray(data.courses)) {

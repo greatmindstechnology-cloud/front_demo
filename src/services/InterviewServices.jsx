@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000/trainer_gmt';
+const BASE_URL = 'https://backend-demo-esqk.onrender.com/trainer_gmt';
 
 // Interviewer APIs
 export const applyAsInterviewer = (data) =>

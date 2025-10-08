@@ -66,7 +66,7 @@ const CreateEvent = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/vendor_gmt/vendor-event/create/?vendor_id=${vendorId}`,
+        `https://backend-demo-esqk.onrender.com/vendor_gmt/vendor-event/create/?vendor_id=${vendorId}`,
         eventData,
         {
           headers: {

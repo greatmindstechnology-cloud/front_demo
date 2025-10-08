@@ -52,7 +52,7 @@ const WorkshopInternshipListings = () => {
       setIsLoading(true);
       setError(null);
       try {
-        const eventsResponse = await fetch('http://localhost:8000/vendor_gmt/vendor-events/', {
+        const eventsResponse = await fetch('https://backend-demo-esqk.onrender.com/vendor_gmt/vendor-events/', {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });
@@ -82,7 +82,7 @@ const WorkshopInternshipListings = () => {
             }))
           : [];
 
-        const internshipsResponse = await fetch('http://localhost:8000/vendor_gmt/vendor-internships/', {
+        const internshipsResponse = await fetch('https://backend-demo-esqk.onrender.com/vendor_gmt/vendor-internships/', {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });

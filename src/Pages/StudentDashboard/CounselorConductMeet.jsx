@@ -20,7 +20,7 @@ const CounselorConductMeet = ({ counselorId }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`http://localhost:8000/trainer_gmt/counseling/session/${id}/`);
+      const response = await axios.get(`https://backend-demo-esqk.onrender.com/trainer_gmt/counseling/session/${id}/`);
       console.log('Session response:', response.data);
 
       // Check if response data is valid
@@ -65,7 +65,7 @@ const CounselorConductMeet = ({ counselorId }) => {
     }
     setLoading(true);
     try {
-      const response = await axios.patch(`http://localhost:8000/trainer_gmt/counseling/requests/${id}/complete/`);
+      const response = await axios.patch(`https://backend-demo-esqk.onrender.com/trainer_gmt/counseling/requests/${id}/complete/`);
       alert(response.data.message);
       navigate('/dashboard/counselor');
     } catch (err) {
