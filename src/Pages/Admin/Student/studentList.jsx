@@ -1,115 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import { DataGrid } from '@mui/x-data-grid';
-import { Paper, IconButton, Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
-import VisibilityIcon from '@mui/icons-material/Visibility';
+import { Search, Edit2, Trash2, Eye, X, Save, Mail, Phone, Award, Grid, List } from 'lucide-react';
 
 export default function StudentList() {
-    const [rows, setRows] = useState([]);
-    const[fulldetails, setFullDetails] = useState([]);
-    const [selectedRow, setSelectedRow] = useState(null);
-    const [openView, setOpenView] = useState(false);
-    const [openEdit, setOpenEdit] = useState(false);
-    const [editFormData, setEditFormData] = useState({
-        id: '',
-        full_name: '',
-        email: '',
-        contact_number: '',
-        skills: '',
-    });
+    const [students, setStudents] = useState([]);
+    const [selectedStudent, setSelectedStudent] = useState(null);
+    const [viewMode, setViewMode] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [editFormData, setEditFormData] = useState({});
+    const [layoutMode, setLayoutMode] = useState('cards'); // 'cards' or 'table'
 
     useEffect(() => {
         fetch('https://backend-demo-esqk.onrender.com/admin_gmt/students/')
             .then(response => response.json())
             .then(data => {
                 if (Array.isArray(data.data)) {
-                    setRows(data.data);
+                    setStudents(data.data);
                 } else if (Array.isArray(data)) {
-                    setRows(data);
+                    setStudents(data);
                 } else {
-                    setRows([]);
+                    setStudents([]);
                 }
             })
             .catch(error => console.error('Error fetching students:', error));
     }, []);
 
-    const columns = [
-        { field: 'id', headerName: 'ID', width: 150 },
-        { field: 'firstname', headerName: 'Name', width: 220 },
-        { field: 'email', headerName: 'Email', width: 220 },
-        { field: 'contact_number', headerName: 'Contact Number', width: 180 },
-        { field: 'skills', headerName: 'Skills', width: 150 },
-        {
-            field: 'edit',
-            headerName: 'Edit',
-            width: 100,
-            sortable: false,
-            filterable: false,
-            renderCell: (params) => (
-                <IconButton color="primary" onClick={() => handleEdit(params.row)}>
-                    <EditIcon />
-                </IconButton>
-            ),
-        },
-        {
-            field: 'delete',
-            headerName: 'Delete',
-            width: 100,
-            sortable: false,
-            filterable: false,
-            renderCell: (params) => (
-                <IconButton color="error" onClick={() => handleDelete(params.row.id)}>
-                    <DeleteIcon />
-                </IconButton>
-            ),
-        },
-        {
-            field: 'actions',
-            headerName: 'View',
-            width: 140,
-            renderCell: (params) => (
-                <Button
-                    variant="outlined"
-                    color="primary"
-                    onClick={() => handleView(params.row)}
-                    size="small"
-                >
-                    View Details
-                </Button>
-            ),
-        },
-    ];
-
-    const handleView = async (row) => {
+    const handleView = async (student) => {
         try {
-            const response = await fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/student/?id=${row.id}`);
+            const response = await fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/student/?id=${student.id}`);
             if (response.ok) {
                 const data = await response.json();
-                const student = data.data ? data.data : data;
-                // Ensure profile_picture is a string or provide a fallback
-                console.log('Selected Student:', student);
-                setSelectedRow(student);
-                setOpenView(true);
-            } else {
-                console.error('Failed to fetch student details:', response.status);
+                const fullStudent = data.data ? data.data : data;
+                setSelectedStudent(fullStudent);
+                setViewMode('view');
             }
         } catch (error) {
             console.error('Error fetching student details:', error);
         }
     };
 
-    const handleEdit = async (row) => {
+    const handleEdit = async (student) => {
         try {
-            const response = await fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/student/?id=${row.id}`);
+            const response = await fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/student/?id=${student.id}`);
             if (response.ok) {
                 const data = await response.json();
-                const student = data.data ? data.data : data;
-                setEditFormData(student);
-                setSelectedRow(student);
-                setOpenEdit(true);
-            } else {
-                console.error('Failed to fetch student details:', response.status);
+                const fullStudent = data.data ? data.data : data;
+                setSelectedStudent(fullStudent);
+                setEditFormData(fullStudent);
+                setViewMode('edit');
             }
         } catch (error) {
             console.error('Error fetching student details:', error);
@@ -117,7 +54,7 @@ export default function StudentList() {
     };
 
     const handleDelete = (id) => {
-        setRows(rows.filter(row => row.id !== id));
+        setStudents(students.filter(s => s.id !== id));
     };
 
     const handleEditSubmit = async () => {
@@ -128,164 +65,306 @@ export default function StudentList() {
                     formData.append(key, value);
                 }
             });
-            console.log('Submitting edit form data:', Object.fromEntries(formData.entries()));
+            
             const response = await fetch(`https://backend-demo-esqk.onrender.com/admin_gmt/update/student/?email=${encodeURIComponent(editFormData.email)}`, {
                 method: 'PUT',
                 body: formData,
             });
             
             if (response.ok) {
-                setRows(rows.map(row => (row.id === editFormData.id ? { ...row, ...editFormData } : row)));
-                setOpenEdit(false);
-                setEditFormData({
-                    id: '',
-                    firstname: '',
-                    lastname: '',
-                    email: '',
-                    date_of_birth: '',
-                    gender: '',
-                    contact_number: '',
-                    alt_contact: '',
-                    father_name: '',
-                    mother_name: '',
-                    address: '',
-                    pincode: '',
-                    description: '',
-                    designation: '',
-                    skills: '',
-                    account_holder_name: '',
-                    account_number: '',
-                    bank_name: '',
-                    bank_location: '',
-                    branch_name: '',
-                    ifsc_code: '',
-                    institution_name: '',
-                    location: '',
-                    major_subject: '',
-                    qualification: '',
-                    cgpa: '',
-                    passedout: '',
-                    Nickname: ''
-                });
-            } else {
-                console.error('Failed to update student');
+                setStudents(students.map(s => (s.id === editFormData.id ? { ...s, ...editFormData } : s)));
+                setViewMode(null);
+                setSelectedStudent(null);
             }
         } catch (error) {
             console.error('Error updating student:', error);
         }
     };
 
-    const handleEditChange = (e) => {
-        setEditFormData({
-            ...editFormData,
-            [e.target.name]: e.target.value
-        });
+    const filteredStudents = students.filter(s => 
+        s.firstname?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        s.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        s.skills?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const getInitials = (name) => {
+        return name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'S';
     };
 
     return (
-        <Paper style={{ height: 600, width: '100%', padding: 16 }}>
-            <DataGrid
-                rows={rows}
-                columns={columns}
-                pageSize={5}
-                rowsPerPageOptions={[5, 10, 20]}
-                checkboxSelection
-                disableSelectionOnClick
-            />
+        <div className="min-h-screen bg-blue-50 p-8">
+            {/* Header */}
+            <div className="max-w-7xl mx-auto mb-8">
+                <div className="flex justify-between items-center">
+                    <div>
+                        <h1 className="text-4xl font-bold text-blue-900 mb-2">Student Directory</h1>
+                        <p className="text-blue-700">Manage and view all student profiles</p>
+                    </div>
+                    {/* Layout Toggle */}
+                    <div className="flex gap-2 bg-white p-1 rounded-lg shadow-md border border-blue-200">
+                        <button
+                            onClick={() => setLayoutMode('cards')}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all ${
+                                layoutMode === 'cards' 
+                                    ? 'bg-blue-700 text-white' 
+                                    : 'text-blue-700 hover:bg-blue-100'
+                            }`}
+                        >
+                            <Grid size={18} />
+                            <span className="font-medium">Cards</span>
+                        </button>
+                        <button
+                            onClick={() => setLayoutMode('table')}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all ${
+                                layoutMode === 'table' 
+                                    ? 'bg-blue-700 text-white' 
+                                    : 'text-blue-700 hover:bg-blue-100'
+                            }`}
+                        >
+                            <List size={18} />
+                            <span className="font-medium">Table</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-            {/* View Dialog */}
-            <Dialog open={openView} onClose={() => setOpenView(false)} maxWidth="sm" fullWidth>
-                <DialogTitle>Student Details</DialogTitle>
-                <DialogContent dividers>
-                    {selectedRow && (
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            {/* Profile Picture */}
-                            <img
-                                src={
-                                    `https://backend-demo-esqk.onrender.com/${selectedRow.profile_picture}`
-                                }
-                                alt="Profile"
-                                style={{
-                                    width: 100,
-                                    height: 100,
-                                    borderRadius: '50%',
-                                    objectFit: 'cover',
-                                    marginBottom: 24,
-                                    border: '3px solid #1976d2'
-                                }}
-                            />
-                            {/* Display all student details in filled TextFields */}
-                            {Object.entries(selectedRow).map(([key, value]) =>
-                                key !== 'profile_picture' ? (
-                                    <TextField
-                                        key={key}
-                                        label={key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                                        value={String(value || '')}
-                                        margin="dense"
-                                        fullWidth
-                                        variant="filled"
-                                        InputProps={{
-                                            readOnly: true,
-                                        }}
-                                        style={{ marginBottom: 12 }}
-                                    />
-                                ) : null
-                            )}
-                        </div>
-                    )}
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={() => setOpenView(false)}>Close</Button>
-                </DialogActions>
-            </Dialog>
+            {/* Search Bar */}
+            <div className="max-w-7xl mx-auto mb-8">
+                <div className="relative">
+                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-400" size={20} />
+                    <input
+                        type="text"
+                        placeholder="Search by name, email, or skills..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full pl-12 pr-4 py-4 rounded-xl border border-blue-300 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm transition-all bg-white"
+                    />
+                </div>
+            </div>
 
-            {/* Edit Dialog */}
-            <Dialog open={openEdit} onClose={() => setOpenEdit(false)} maxWidth="sm" fullWidth>
-                <DialogTitle>Edit Student</DialogTitle>
-                <DialogContent dividers>
-                    {selectedRow && (
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                            {/* Profile Picture */}
-                            <img
-                                src={
-                                    `https://backend-demo-esqk.onrender.com/${selectedRow.profile_picture}`
-                                }
-                                alt="Profile"
-                                style={{
-                                    width: 100,
-                                    height: 100,
-                                    borderRadius: '50%',
-                                    objectFit: 'cover',
-                                    marginBottom: 24,
-                                    border: '3px solid #1976d2'
-                                }}
-                            />
-                            {/* Display all student details in filled TextFields */}
-                            {Object.entries(selectedRow).map(([key, value]) =>
-                                key !== 'profile_picture' ? (
-                                    <TextField
-                                        key={key}
-                                        name={key}
-                                        label={key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                                        value={editFormData[key] !== undefined ? editFormData[key] : ''}
-                                        margin="dense"
-                                        onChange={handleEditChange}
-                                        fullWidth
-                                        variant="filled"
-                                        style={{ marginBottom: 12 }}
-                                    />
-                                ) : null
-                            )}
+            {/* Cards View */}
+            {layoutMode === 'cards' && (
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredStudents.map((student) => (
+                        <div
+                            key={student.id}
+                            className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-blue-200"
+                        >
+                            {/* Card Header */}
+                            <div className="h-24 bg-blue-700 relative">
+                                <div className="absolute -bottom-12 left-6">
+                                    <div className="w-24 h-24 rounded-full border-4 border-white shadow-lg bg-blue-600 flex items-center justify-center text-white text-2xl font-bold">
+                                        {getInitials(student.firstname)}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Card Body */}
+                            <div className="pt-16 px-6 pb-6">
+                                <h3 className="text-xl font-bold text-blue-900 mb-1">{student.firstname}</h3>
+                                <p className="text-sm text-blue-700 mb-4 flex items-center gap-1">
+                                    <Mail size={14} />
+                                    {student.email}
+                                </p>
+
+                                <div className="space-y-2 mb-4">
+                                    <div className="flex items-center gap-2 text-sm text-blue-800">
+                                        <Phone size={14} className="text-blue-600" />
+                                        <span>{student.contact_number || 'N/A'}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Award size={14} className="text-blue-600" />
+                                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                                            {student.skills || 'No skills listed'}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                {/* Action Buttons */}
+                                <div className="flex gap-2 pt-4 border-t border-blue-200">
+                                    <button
+                                        onClick={() => handleView(student)}
+                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                                    >
+                                        <Eye size={16} />
+                                        <span className="text-sm font-medium">View</span>
+                                    </button>
+                                    <button
+                                        onClick={() => handleEdit(student)}
+                                        className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors"
+                                    >
+                                        <Edit2 size={16} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleDelete(student.id)}
+                                        className="flex items-center justify-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                                    >
+                                        <Trash2 size={16} />
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    )}
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={() => setOpenEdit(false)}>Cancel</Button>
-                    <Button onClick={handleEditSubmit} color="primary" variant="contained">
-                        Save
-                    </Button>
-                </DialogActions>
-            </Dialog>
-        </Paper>
+                    ))}
+                </div>
+            )}
+
+            {/* Table View */}
+            {layoutMode === 'table' && (
+                <div className="max-w-7xl mx-auto">
+                    <div className="bg-white rounded-xl shadow-md overflow-hidden border border-blue-200">
+                        <table className="w-full">
+                            <thead className="bg-blue-700 text-white">
+                                <tr>
+                                    <th className="px-6 py-4 text-left font-semibold">ID</th>
+                                    <th className="px-6 py-4 text-left font-semibold">Name</th>
+                                    <th className="px-6 py-4 text-left font-semibold">Email</th>
+                                    <th className="px-6 py-4 text-left font-semibold">Contact</th>
+                                    <th className="px-6 py-4 text-left font-semibold">Skills</th>
+                                    <th className="px-6 py-4 text-center font-semibold">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {filteredStudents.map((student, index) => (
+                                    <tr 
+                                        key={student.id}
+                                        className={`border-b border-blue-200 hover:bg-blue-50 transition-colors ${
+                                            index % 2 === 0 ? 'bg-white' : 'bg-blue-50'
+                                        }`}
+                                    >
+                                        <td className="px-6 py-4 text-blue-900 font-medium">{student.id}</td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold text-sm">
+                                                    {getInitials(student.firstname)}
+                                                </div>
+                                                <span className="text-blue-900 font-medium">{student.firstname}</span>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4 text-blue-700">{student.email}</td>
+                                        <td className="px-6 py-4 text-blue-700">{student.contact_number || 'N/A'}</td>
+                                        <td className="px-6 py-4">
+                                            <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                                                {student.skills || 'N/A'}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex justify-center gap-2">
+                                                <button
+                                                    onClick={() => handleView(student)}
+                                                    className="p-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors"
+                                                    title="View"
+                                                >
+                                                    <Eye size={16} />
+                                                </button>
+                                                <button
+                                                    onClick={() => handleEdit(student)}
+                                                    className="p-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors"
+                                                    title="Edit"
+                                                >
+                                                    <Edit2 size={16} />
+                                                </button>
+                                                <button
+                                                    onClick={() => handleDelete(student.id)}
+                                                    className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                                                    title="Delete"
+                                                >
+                                                    <Trash2 size={16} />
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            )}
+
+            {/* View/Edit Modal */}
+            {viewMode && selectedStudent && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                    <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                        {/* Modal Header */}
+                        <div className="sticky top-0 bg-blue-700 text-white p-6 rounded-t-2xl flex justify-between items-center">
+                            <div className="flex items-center gap-3">
+                                {viewMode === 'view' ? <Eye size={24} /> : <Edit2 size={24} />}
+                                <h2 className="text-2xl font-bold">
+                                    {viewMode === 'view' ? 'Student Profile' : 'Edit Student'}
+                                </h2>
+                            </div>
+                            <button
+                                onClick={() => { setViewMode(null); setSelectedStudent(null); }}
+                                className="hover:bg-blue-600 p-2 rounded-lg transition-colors"
+                            >
+                                <X size={24} />
+                            </button>
+                        </div>
+
+                        {/* Modal Body */}
+                        <div className="p-8">
+                            {/* Profile Section */}
+                            <div className="flex flex-col items-center mb-8 pb-8 border-b border-blue-200">
+                                <div className="w-32 h-32 rounded-full border-4 border-blue-600 shadow-xl mb-4 overflow-hidden bg-blue-100">
+                                    <img
+                                        src={`https://backend-demo-esqk.onrender.com/${selectedStudent.profile_picture}`}
+                                        alt="Profile"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <h3 className="text-2xl font-bold text-blue-900">{selectedStudent.firstname} {selectedStudent.lastname}</h3>
+                                <p className="text-blue-700">{selectedStudent.designation || 'Student'}</p>
+                            </div>
+
+                            {/* Details Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {Object.entries(selectedStudent).map(([key, value]) => {
+                                    if (key === 'profile_picture') return null;
+                                    
+                                    const label = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                                    
+                                    return (
+                                        <div key={key} className="bg-blue-50 rounded-xl p-4 hover:bg-blue-100 transition-colors">
+                                            <label className="text-sm font-semibold text-blue-700 mb-2 block">
+                                                {label}
+                                            </label>
+                                            {viewMode === 'view' ? (
+                                                <p className="text-blue-900">{value || 'N/A'}</p>
+                                            ) : (
+                                                <input
+                                                    type="text"
+                                                    name={key}
+                                                    value={editFormData[key] || ''}
+                                                    onChange={(e) => setEditFormData({...editFormData, [e.target.name]: e.target.value})}
+                                                    className="w-full px-3 py-2 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                                />
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Action Buttons */}
+                            <div className="flex gap-4 mt-8 pt-6 border-t border-blue-200">
+                                <button
+                                    onClick={() => { setViewMode(null); setSelectedStudent(null); }}
+                                    className="flex-1 px-6 py-3 bg-blue-100 text-blue-800 rounded-xl font-medium hover:bg-blue-200 transition-colors"
+                                >
+                                    {viewMode === 'view' ? 'Close' : 'Cancel'}
+                                </button>
+                                {viewMode === 'edit' && (
+                                    <button
+                                        onClick={handleEditSubmit}
+                                        className="flex-1 px-6 py-3 bg-blue-700 text-white rounded-xl font-medium hover:bg-blue-800 transition-all flex items-center justify-center gap-2"
+                                    >
+                                        <Save size={20} />
+                                        Save Changes
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
     );
-}
+}   
