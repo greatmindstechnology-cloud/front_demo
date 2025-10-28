@@ -26,7 +26,7 @@ export default function CourseApproval() {
       .then((res) => res.json())
       
       .then((result) => {
-        alert("data fetch successfully ", result)
+       
         console.log('Fetched courses:', result.data);
         const data = Array.isArray(result.data) ? result.data : [];
         console.log(data);

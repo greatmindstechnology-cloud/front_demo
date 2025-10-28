@@ -156,7 +156,7 @@ const StudentDashboard = () => {
         setDashboardStats(data || { enrolledCourses: 0, activeCourses: 0, completedCourses: 0, courseInstructors: 0 });
       })
       .catch(err => {
-        console.error('Error fetching dashboard stats:', err);
+       
         setErrors(prev => [...prev, err.message]);
         setDashboardStats({
           enrolledCourses: 0,
@@ -213,12 +213,7 @@ const StudentDashboard = () => {
   return (
     <Box sx={{ bgcolor: theme.palette.background.default, minHeight: '100vh' }}>
       <Container maxWidth="xl" sx={{ py: 4 }}>
-        {/* Error Display */}
-        {errors.length > 0 && (
-          <Alert severity="warning" sx={{ mb: 3, borderRadius: 2 }}>
-            {errors.join(', ')}
-          </Alert>
-        )}
+      
 
         {/* Welcome Header Section */}
         <Paper

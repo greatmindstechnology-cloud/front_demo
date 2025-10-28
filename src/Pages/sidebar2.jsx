@@ -230,12 +230,12 @@ export default function CustomSideBar({ window }) {
       icon: <SupportAgentIcon />,
       allowedRoles: ["student"],
     },
-    {
-      segment: "AvailableCounselors",
-      title: "Available Counselors",
-      icon: <PeopleAltIcon />,
-      allowedRoles: ["student"],
-    },
+    // {
+    //   segment: "AvailableCounselors",
+    //   title: "Available Counselors",
+    //   icon: <PeopleAltIcon />,
+    //   allowedRoles: ["student"],
+    // },
 
     // Admin Dashboard
     {
@@ -306,6 +306,26 @@ export default function CustomSideBar({ window }) {
       icon: <DashboardIcon />,
       allowedRoles: ["trainer"],
     },
+    // #
+    //     {
+    //   segment: "trainer/assignment",
+    //   title: "Create Assignment",
+    //   icon: <DescriptionIcon />,
+    //   allowedRoles: ["trainer"],
+    // },
+    //     {
+    //   segment: "trainer/create-project-task",
+    //   title: "Create Task",
+    //   icon: <ChecklistIcon />,
+    //   allowedRoles: ["trainer"],
+    // },
+    //     {
+    //   segment: "trainer/manage-uploads",
+    //   title: "Manage Uploads",
+    //   icon: <CloudUploadIcon />,
+    //   allowedRoles: ["trainer"],
+    // },
+    // #
     {
       segment: "trainer/topic-create",
       title: "Create Topic",
@@ -324,6 +344,7 @@ export default function CustomSideBar({ window }) {
       icon: <GradeIcon />,
       allowedRoles: ["trainer"],
     },
+    
     {
       segment: "trainer/Mockinterview",
       title: "Mock Interviews",
@@ -336,7 +357,7 @@ export default function CustomSideBar({ window }) {
       icon: <Diversity3Icon />,
       allowedRoles: ["trainer"],
     },
-    {
+    { 
       segment: "Internships",
       title: "Manage Internships",
       icon: <BusinessCenterIcon />,
