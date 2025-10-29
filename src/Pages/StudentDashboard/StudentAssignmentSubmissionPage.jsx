@@ -34,7 +34,7 @@ import {
   AttachFile,
 } from '@mui/icons-material';
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = 'https://backend-demo-esqk.onrender.com';
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const ALLOWED_FILE_TYPES = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
 
@@ -353,17 +353,6 @@ const StudentAssignmentSubmissionPage = () => {
           <Paper elevation={3} sx={{ p: { xs: 2, md: 4 } }}>
             <form onSubmit={handleSubmit}>
               <Stack spacing={3}>
-                {/* Student ID */}
-                <TextField
-                  label="Student ID"
-                  value={studentId}
-                  InputProps={{ readOnly: true }}
-                  fullWidth
-                  required
-                  error={!!validationErrors.student}
-                  helperText={validationErrors.student || (studentId ? 'Your student identifier' : 'Not logged in - please log in first')}
-                  variant="outlined"
-                />
 
                 {/* Assignment Selection */}
                 <FormControl 
