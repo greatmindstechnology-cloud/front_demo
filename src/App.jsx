@@ -90,6 +90,7 @@ import GetTasks from "./Pages/StudentDashboard/GetTasks";
 import SubmitTask from "./Pages/StudentDashboard/SubmitTask";
 import MyCourses from "./Pages/StudentDashboard/MyCourses";
 import BookCard from "./Pages/Courses/BookCard";
+import PaymentApproval from "./Pages/Admin/Student/PaymentApproval.jsx";
 
 // Placeholder components for missing routes
 const Certification = () => <div>Certification Page (Student)</div>;
@@ -155,6 +156,7 @@ function App() {
               <Route path="StudentCounselingRequests" element={<StudentCounselingRequests />} />
               <Route path="AvailableCounselors" element={<AvailableCounselors />} />
               <Route path="CounselorConductMeet" element={<CounselorConductMeet />} />
+              
               <Route path="Events" element={<Events />}>
                 <Route path="workshop" element={<Workshop />} />
                 <Route path="seminar" element={<Seminar />} />
@@ -233,6 +235,8 @@ function App() {
               <Route path="Csreporting" element={<Csreporting />} />
               <Route path="coursesapproval" element={<CoursesApproval />} />
               <Route path="Counselorapproval" element={<AdminCounselorApplications />} />
+              <Route path="PaymentApproval" element={<PaymentApproval />} />
+
             </Route>
           </Route>
 

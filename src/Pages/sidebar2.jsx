@@ -263,6 +263,12 @@ export default function CustomSideBar({ window }) {
       allowedRoles: ["admin"],
     },
     {
+      segment: "admin/PaymentApproval",
+      title: "PaymentApproval",
+      icon: <VendorIcon />,
+      allowedRoles: ["admin"],
+    },
+    {
       segment: "admin/courselist",
       title: "Course Management",
       icon: <LibraryBooksIcon />,
