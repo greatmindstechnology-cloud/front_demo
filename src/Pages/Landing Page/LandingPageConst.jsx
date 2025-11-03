@@ -13,6 +13,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import '../../App.css'
 import '../../index.css'
+import ClassesCarousel from '../../components/LandingPage/ClassesCarousel'
 
 function LandingPageConst() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -21,6 +22,7 @@ function LandingPageConst() {
       <Navbar />
       <Hero  searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Courses searchTerm={searchTerm} />
+      <ClassesCarousel />
       {/* <Features data={landingPageData.Features} /> */}
       {/* <Achivement />
       <Categories />

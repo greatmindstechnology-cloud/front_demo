@@ -39,7 +39,6 @@ import Footer from '../../components/Footer/Footer';
 import CourseCard from '../../components/CourseCard/CourseCard';
 import CourseSlider from '../../components/CourseSlider';
 import emptyProfileImg from '../../assets/emptyprofile.png';
-import './StudentDashboard.css';
 
 const StudentDashboard = () => {
   const [userData, setUserData] = useState(null);

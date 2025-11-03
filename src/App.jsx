@@ -90,6 +90,7 @@ import GetTasks from "./Pages/StudentDashboard/GetTasks";
 import SubmitTask from "./Pages/StudentDashboard/SubmitTask";
 import MyCourses from "./Pages/StudentDashboard/MyCourses";
 import BookCard from "./Pages/Courses/BookCard";
+import CourseDetails from "./components/LandingPage/CourseDetails.jsx";
 
 // Placeholder components for missing routes
 const Certification = () => <div>Certification Page (Student)</div>;
@@ -106,6 +107,7 @@ function App() {
       <Router>
         <Routes>
           {/* Public Routes */}
+          <Route path="course/:id" element={<CourseDetails />} />
           <Route path="/" element={<LandingPageConst />} />
           <Route path="/login" element={<Login />} />
           <Route path="/reset" element={<ResetPassword />} />
@@ -128,7 +130,6 @@ function App() {
             <Route element={<ProtectedRoute allowedRoles={["student"]} />}>
               <Route index element={<StudentDashboard />} />
               <Route path="editform" element={<StudentEditForm />} />
-              <Route path="course/:id" element={<CourseDetail />} />
               <Route path="course" element={<CourseList />} />
               <Route path="course/:id" element={<CourseDetail />} />
               <Route path="course/:id/video" element={<CourseVideoPage />} />
