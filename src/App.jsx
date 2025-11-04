@@ -91,6 +91,7 @@ import SubmitTask from "./Pages/StudentDashboard/SubmitTask";
 import MyCourses from "./Pages/StudentDashboard/MyCourses";
 import BookCard from "./Pages/Courses/BookCard";
 import PaymentApproval from "./Pages/Admin/Student/PaymentApproval.jsx";
+import CourseDetails from "./Pages/Landing Page/CourseDetails.jsx";
 
 // Placeholder components for missing routes
 const Certification = () => <div>Certification Page (Student)</div>;
