@@ -107,6 +107,7 @@ function App() {
       <Router>
         <Routes>
           {/* Public Routes */}
+          <Route path="course/:id" element={<CourseDetails />} />
           <Route path="/" element={<LandingPageConst />} />
           <Route path="/login" element={<Login />} />
           <Route path="/reset" element={<ResetPassword />} />
@@ -129,7 +130,6 @@ function App() {
             <Route element={<ProtectedRoute allowedRoles={["student"]} />}>
               <Route index element={<StudentDashboard />} />
               <Route path="editform" element={<StudentEditForm />} />
-              <Route path="course/:id" element={<CourseDetail />} />
               <Route path="course" element={<CourseList />} />
               <Route path="course/:id" element={<CourseDetail />} />
               <Route path="course/:id/video" element={<CourseVideoPage />} />
